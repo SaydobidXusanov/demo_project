@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>This is question number {{ question.id }}</p>
+    <h1> {{ question.question_text }}</h1>
+    <p>These are the choices: </p>
+    <table>
+    {% for choice in question_choices_list %}
+        <tr>
+            <td> {{ choice.choice_text }}</td>
+            <td> {{ choice.votes }}</td>
+            <td> Vote for this choice: <a href="/polls/{{ question.id }}/vote/{{ choice.id }}">Click here to vote</a></td>
+        </tr>
+    {% endfor %}
+    </table>
+</body>
+</html>
